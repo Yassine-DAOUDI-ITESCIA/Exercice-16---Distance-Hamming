@@ -1,17 +1,20 @@
+* @author  Yassine Daoudi
+* @version 30/10/19
+
 mot1 = input('Veuillez taper votre 1er mot: ')
 mot2 = input('Veuillez taper votre 2nd mot: ')
 distanceH = 0
 b = 0
-def distance_hamming(mot1, mot2):
+def distance_hamming(valeur1, valeur2):
     global b
     global distanceH
-    for i in mot1:
-        if len(mot1) != len(mot2):
+    for i in valeur1:
+        if len(valeur1) != len(valeur2):
             print('les deux mots doivent avoir le même nombre de caractère')
             break
-        elif i != mot2[b]:
+        elif i != valeur2[b]:
             distanceH+=1
         b = b + 1
 
-distance_hamming(mot1, mot2)
+distance_hamming(mot1.lower(), mot2.lower())
 print("la distance de haming entre ces deux mots est de :", distanceH)
